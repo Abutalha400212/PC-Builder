@@ -86,12 +86,12 @@ const items = [
 ];
 export default function Navbar() {
   return (
-    <Row justify="center">
-      <Col xl={24} lg={24} md={24} sm={24} xs={24}>
+    <Row>
+      <Col xl={24} lg={24} md={8} sm={24} xs={24}>
         <Header className="header-fixed">
           <Row>
-            <Col xl={12} lg={12} md={12} sm={20} xs={20}>
-              <Link href={""}>
+            <Col xl={4} lg={7} md={8} sm={12} xs={12}>
+              <Link href={"/"}>
                 <Image
                   src={"/images/logo.svg"}
                   alt=""
@@ -100,11 +100,10 @@ export default function Navbar() {
                 />
               </Link>
             </Col>
-            <Col xl={12} lg={12} md={12} sm={4} xs={4}>
+            <Col xl={16} lg={10} md={8} sm={6} xs={6}>
               <Menu
                 theme="dark"
                 mode="horizontal"
-                defaultSelectedKeys={["item1"]}
                 overflowedIndicator={<MenuOutlined />}>
                 <Dropdown menu={{ items }} placement="bottomLeft" arrow>
                   <Menu.Item
@@ -134,18 +133,19 @@ export default function Navbar() {
                     Mac
                   </Menu.Item>
                 </Dropdown>
-
-                <Menu.Item style={{ fontSize: "15px", fontWeight: 500 }}>
-                  <Link
-                    type="button"
-                    style={{
-                      margin: "5px",
-                    }}
-                    href={""}>
-                    PC Builder
-                  </Link>
-                </Menu.Item>
               </Menu>
+            </Col>
+            <Col xl={4} lg={7} md={8} sm={6} xs={6}>
+              <Button type="primary">
+                <Link
+                  type="button"
+                  style={{
+                    margin: "5px",
+                  }}
+                  href={""}>
+                  PC Builder
+                </Link>
+              </Button>
             </Col>
           </Row>
         </Header>

@@ -10,7 +10,12 @@ const RootLayout = ({ children }) => {
         minHeight: "100vh",
       }}>
       <Navbar />
-      <Content>{children}</Content>
+      <Content
+        style={{
+          background: "white",
+        }}>
+        {children}
+      </Content>
       <Footer
         style={{
           textAlign: "center",
