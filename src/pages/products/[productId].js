@@ -6,7 +6,6 @@ import { ObjectId } from "mongodb";
 import Image from "next/image";
 
 export default function ProductDetails({ product }) {
-  console.log(product);
   const { Meta } = Card;
   return (
     <Row

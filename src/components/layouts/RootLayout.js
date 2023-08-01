@@ -1,4 +1,3 @@
-import React from "react";
 import { Layout } from "antd";
 import Navbar from "../Shared/Navbar";
 const { Content, Footer } = Layout;
@@ -13,6 +12,7 @@ const RootLayout = ({ children }) => {
       <Content
         style={{
           background: "white",
+          margin: 5,
         }}>
         {children}
       </Content>

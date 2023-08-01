@@ -1,10 +1,18 @@
-import { Card, Rate } from "antd";
+import { Button, Card, Rate } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import { Space, Tag } from "antd";
-export default function ProductCard({ news }) {
+import { useDispatch } from "react-redux";
+import { addCart } from "@/redux/cart/cartSlice";
+import { useRouter } from "next/router";
+export default function ProductCard({ news, pathname }) {
+  const router = useRouter();
   const { Meta } = Card;
-
+  const dispatch = useDispatch();
+  const handleAddBuilder = (payload) => {
+    dispatch(addCart(payload));
+    router.push("/tool");
+  };
   return (
     <Card
       style={{
@@ -78,23 +86,29 @@ export default function ProductCard({ news }) {
       </Space>
       <br />
 
-      <span>
-        <Rate
-          style={{
-            fontSize: "14px",
-          }}
-          disabled
-          value={news?.rating}
-        />
-        <span
-          style={{
-            color: "gray",
-            fontSize: "14px",
-          }}>
-          {" "}
-          (Out of 5 Stars)
+      {pathname === "/products" ? (
+        <Button onClick={() => handleAddBuilder(news)} type="primary" block>
+          Add
+        </Button>
+      ) : (
+        <span>
+          <Rate
+            style={{
+              fontSize: "14px",
+            }}
+            disabled
+            value={news?.rating}
+          />
+          <span
+            style={{
+              color: "gray",
+              fontSize: "14px",
+            }}>
+            {" "}
+            (Out of 5 Stars)
+          </span>
         </span>
-      </span>
+      )}
     </Card>
   );
 }

@@ -142,7 +142,7 @@ export default function Navbar() {
                   style={{
                     margin: "5px",
                   }}
-                  href={""}>
+                  href={"/tool"}>
                   PC Builder
                 </Link>
               </Button>
