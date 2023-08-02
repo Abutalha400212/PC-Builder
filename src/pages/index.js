@@ -1,8 +1,11 @@
+import HeroSection from "@/components/UI/Hero";
 import ProductCard from "@/components/UI/ProductCard";
 import RootLayout from "@/components/layouts/RootLayout";
 import { Col, Row } from "antd";
 import Head from "next/head";
 export default function Home({ products }) {
+  const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
+  const randomProducts = shuffle(products);
   return (
     <>
       <Head>
@@ -15,31 +18,37 @@ export default function Home({ products }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1
-          style={{
-            textAlign: "center",
-          }}>
-          Hello, Im Abu Talha
-        </h1>
-        <Row
-          style={{
-            placeContent: "center",
-            padding: 10,
-          }}
-          gutter={24}>
-          {products?.map((news) => (
-            <Col
-              xl={6}
-              lg={8}
-              md={8}
-              sm={24}
-              xs={24}
-              key={news._id}
-              className="gutter-row">
-              <ProductCard news={news} />
-            </Col>
-          ))}
-        </Row>
+        <HeroSection />
+        <div>
+          <h1
+            style={{
+              fontSize: "18px",
+              textAlign: "center",
+              textDecoration: "underline",
+              fontFamily: "sans-serif",
+            }}>
+            #Top trending products
+          </h1>
+          <Row
+            style={{
+              placeContent: "center",
+              padding: 10,
+            }}
+            gutter={24}>
+            {randomProducts?.slice(0, 4)?.map((news) => (
+              <Col
+                xl={6}
+                lg={8}
+                md={8}
+                sm={24}
+                xs={24}
+                key={news._id}
+                className="gutter-row">
+                <ProductCard news={news} />
+              </Col>
+            ))}
+          </Row>
+        </div>
       </main>
     </>
   );

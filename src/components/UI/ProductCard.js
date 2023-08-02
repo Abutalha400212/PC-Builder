@@ -1,11 +1,12 @@
 import { Button, Card, Rate } from "antd";
 import Image from "next/image";
 import Link from "next/link";
-import { Space, Tag } from "antd";
+import { Space, Tag, Typography } from "antd";
 import { useDispatch } from "react-redux";
 import { addCart } from "@/redux/cart/cartSlice";
 import { useRouter } from "next/router";
 export default function ProductCard({ news, pathname }) {
+  const { Text } = Typography;
   const router = useRouter();
   const { Meta } = Card;
   const dispatch = useDispatch();
@@ -74,15 +75,9 @@ export default function ProductCard({ news, pathname }) {
         style={{
           marginBottom: "8px",
         }}>
-        <Tag color="blue" style={{ fontSize: "10px", color: "black" }}>
-          Category: {news?.category}
-        </Tag>
-        <Tag color="yellow" style={{ fontSize: "10px", color: "black" }}>
-          Price: {news?.price}৳
-        </Tag>
-        <Tag color="red" style={{ fontSize: "10px", color: "black" }}>
-          Reg. Price: {news?.regular}৳
-        </Tag>
+        <Text keyboard>Category: {news?.category}</Text>
+        <Text keyboard>Price: {news?.price}</Text>
+        <Text keyboard>Reg. Price: {news?.regular}</Text>
       </Space>
       <br />
 

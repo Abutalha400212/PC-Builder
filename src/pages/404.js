@@ -1,6 +1,4 @@
-import ErrorImage from "@/assets/images/404_Error_Page.png";
-import Image from "next/image";
-import { Button } from "antd";
+import { Button, Result } from "antd";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -22,16 +20,16 @@ const NotFoundPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Image
-        src={ErrorImage}
-        width={400}
-        height={300}
-        alt="error_image"
-        style={{ display: "flex", margin: "50px auto" }}
+      <Result
+        status="404"
+        title="404"
+        subTitle="Sorry, the page you visited does not exist."
+        extra={
+          <Link href={"/"}>
+            <Button type="primary">Back Home</Button>
+          </Link>
+        }
       />
-      <Link href="/">
-        <Button>Back To Home</Button>
-      </Link>
     </div>
   );
 };

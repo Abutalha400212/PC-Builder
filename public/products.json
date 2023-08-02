@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Seagate Barracuda 2TB 2.5 Inch SATA Laptop HDD",
+    "category": "Hard Disk",
+    "description": "Seagate Barracuda Laptop HDD is comes with 2TB capacity. This HDD built in SATA 6.0Gb/s Interface with 5400RPM. This HDD has 13ms Seek time wikth 2.5 Inch form factor. Seagate BarraCudaâ€™s SATA 6Gb/s interface optimizes burst performance while Seagate Secure models offer hardware-based data security. Best-fit applications for BarraCuda hard drives include desktop or all-in-one PCs, home servers, entry-level direct-attached storage devices (DAS).Instant Secure Erase allows safe and easy drive retirements. This HDD comes with 02 years of warranty.",
+    "model": "Barracuda",
+    "status": "in stock",
+    "brand": "Seagate",
+    "price": 9000,
+    "regular": 8010,
+    "rating": 5,
+    "features": [
+      "MPN: ST2000LM015",
+      "Capacity: 2TB",
+      "Form factor: 2.5 Inch",
+      "Interface (Built-in): SATA 6.0Gb/s",
+      "Average Seek Time: 13ms"
+    ],
+    "image_url": "/images/excercise6.jpg"
+  },
+  {
+    "title": "Asustor AS6602T NAS Storage",
+    "category": "Storage",
+    "description": "The Asustor AS6602T NAS Storage is a high-performance network-attached storage device that comes with a variety of features and capabilities to support advanced storage requirements. It is designed to offer reliable data storage, fast data transfer speeds, and a range of backup and virtualization solutions. The device features two 2.5 GbE ports, which can support up to 5 Gbps under Link Aggregation. This makes it easy to transfer data quickly and efficiently, even when dealing with large files. Additionally, it has dual M.2 NVMe SSD ports, which can be used for fast caching, allowing for even faster access to frequently accessed files. The Asustor AS6602T is optimized for 4K video playback, offering an overwhelming 4K experience.",
+    "model": "AS6602T",
+    "status": "in stock",
+    "brand": "Asustor",
+    "price": 675000,
+    "regular": 65000,
+    "rating": 5,
+    "features": [
+      "Dual M.2 NVMe SSD ports for fast caching",
+      "Two 2.5 GbE ports with up to 5 Gbps",
+      "Overwhelming 4K experience",
+      "4GB SO-DIMM DDR4 Memory"
+    ],
+    "image_url": "/images/exercise5.webp"
+  },
+  {
+    "title": "Revenger MX 10 Mid-Tower Micro ATX Casing",
+    "category": "Casing",
+    "description": "Revenger MX 10 Mid-Tower Micro ATX Casing is a compact-size mid-tower case with a simple design. It has a spacious structure and a stylish appearance. It has a simple yet efficient design. This casing supports, Micro-ATX motherboards. there are metal covers. Side cooling air hole structure ensures smooth air circulation to maintain optimum internal temperature. It comes with An I/O port of these casing consisting of 2x USB, one 3.5mm HD AUDIO jack, a Power button, and a restart button. The casing has additional space for a 1x 80mm optional cooler fan. Revenger MX 10 Mid-Tower ATX Casing offers No Warranty.",
+    "model": "MX 10",
+    "status": "in stock",
+    "brand": "Revenger",
+    "price": 675000,
+    "regular": 65000,
+    "rating": 5,
+    "features": [
+      " Motherboard Support: Micro-ATX",
+      "Material: Acrylic, Plastic, Steel",
+      "USB 2 X USB, 1 X Audio, 1 X MIC"
+    ],
+    "image_url": "/images/exercise6.webp"
+  }
+]
