@@ -1,3 +1,4 @@
+import ErrorImage from "@/assets/images/404_Error_Page.png";
 import Image from "next/image";
 import { Button } from "antd";
 import Head from "next/head";
@@ -22,9 +23,9 @@ const NotFoundPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Image
-        src={"/404_Error_Page.png"}
-        width={700}
-        height={700}
+        src={ErrorImage}
+        width={400}
+        height={300}
         alt="error_image"
         style={{ display: "flex", margin: "50px auto" }}
       />

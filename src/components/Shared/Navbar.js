@@ -1,7 +1,8 @@
 import { Row, Col, Typography, Layout, Menu, Dropdown, Button } from "antd";
-import { MenuOutlined } from "@ant-design/icons";
+import { MenuOutlined, LoginOutlined, LogoutOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import Image from "next/image";
+import { signOut, useSession } from "next-auth/react";
 
 const { Header, Content } = Layout;
 const { Title } = Typography;
@@ -85,12 +86,14 @@ const items = [
   },
 ];
 export default function Navbar() {
+  const { data: session } = useSession();
+  console.log(session);
   return (
     <Row>
       <Col xl={24} lg={24} md={8} sm={24} xs={24}>
         <Header className="header-fixed">
           <Row>
-            <Col xl={4} lg={7} md={8} sm={12} xs={12}>
+            <Col xl={4} lg={7} md={8} sm={10} xs={10}>
               <Link href={"/"}>
                 <Image
                   src={"/images/logo.svg"}
@@ -100,7 +103,7 @@ export default function Navbar() {
                 />
               </Link>
             </Col>
-            <Col xl={16} lg={10} md={8} sm={6} xs={6}>
+            <Col xl={16} lg={10} md={8} sm={4} xs={4}>
               <Menu
                 theme="dark"
                 mode="horizontal"
@@ -135,17 +138,36 @@ export default function Navbar() {
                 </Dropdown>
               </Menu>
             </Col>
-            <Col xl={4} lg={7} md={8} sm={6} xs={6}>
-              <Button type="primary">
-                <Link
-                  type="button"
-                  style={{
-                    margin: "5px",
-                  }}
-                  href={"/tool"}>
+            <Col xl={4} lg={7} md={8} sm={10} xs={10}>
+              <Button
+                style={{
+                  margin: "5px",
+                  marginRight: "10px",
+                }}
+                type="primary">
+                <Link type="button" href={"/tool"}>
                   PC Builder
                 </Link>
               </Button>
+              {session?.user.email ? (
+                <Button
+                  onClick={() => signOut()}
+                  title="Logout"
+                  type="default"
+                  icon={<LogoutOutlined />}
+                />
+              ) : (
+                <Link
+                  title="Login"
+                  type="button"
+                  style={{
+                    fontSize: "20px",
+                    color: "blueviolet",
+                  }}
+                  href={"/login"}>
+                  <Button icon={<LoginOutlined />} />
+                </Link>
+              )}
             </Col>
           </Row>
         </Header>

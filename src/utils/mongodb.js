@@ -1,6 +1,6 @@
 import { MongoClient } from "mongodb";
 
-const uri = process.env.NEXT_PUBLIC_DB_URL; // Replace this with your actual MongoDB connection string
+const uri = process.env.DB_URL; // Replace this with your actual MongoDB connection string
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,

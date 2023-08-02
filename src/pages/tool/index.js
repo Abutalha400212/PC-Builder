@@ -9,6 +9,10 @@ export default function PCBuilder() {
 
   return (
     <Card
+      style={{
+        maxWidth: "800px",
+        margin: "20px auto",
+      }}
       title="PC Builder ( You can select a total of four items )"
       actions={[
         data.length >= 4 && (
@@ -29,7 +33,11 @@ export default function PCBuilder() {
           <List.Item key={index}>
             <List.Item.Meta
               avatar={<Avatar size={50} src={item?.image_url} />}
-              title={item?.title}
+              title={
+                <Link href={`/products/${item?._id}?filter=full`}>
+                  {item?.title}
+                </Link>
+              }
               description={
                 <div>
                   <p>

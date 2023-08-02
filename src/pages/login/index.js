@@ -1,33 +1,93 @@
-import { Form, Icon, Input, Button, Checkbox } from "antd";
-
+import { Form, Icon, Input, Button, Checkbox, Card } from "antd";
+import { GithubOutlined, GoogleOutlined } from "@ant-design/icons";
+import RootLayout from "@/components/layouts/RootLayout";
+import { signIn } from "next-auth/react";
 const LoginPage = () => {
+  const onFinish = (values) => {
+    console.log("Success:", values);
+  };
+  const onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+  };
   return (
-    <Form className="login-form">
-      <Form.Item>
-        <Input
-          prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
-          placeholder="Username"
-        />
-      </Form.Item>
-      <Form.Item>
-        <Input
-          prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
-          type="password"
-          placeholder="Password"
-        />
-      </Form.Item>
-      <Form.Item>
-        <Checkbox>Remember me</Checkbox>
-        <a className="login-form-forgot" href="">
-          Forgot password
-        </a>
-        <Button type="primary" htmlType="submit" className="login-form-button">
-          Log in
-        </Button>
-        Or <a href="">register now!</a>
-      </Form.Item>
-    </Form>
+    <Card
+      style={{
+        maxWidth: "600px",
+        margin: "20px auto",
+      }}
+      title="Login"
+      extra={
+        <>
+          <Button
+            onClick={() =>
+              signIn("github", {
+                callbackUrl: "http://localhost:3000/",
+              })
+            }
+            type="primary"
+            key="github">
+            <GithubOutlined /> Github
+          </Button>
+          ,
+          <Button
+            onClick={() =>
+              signIn("google", {
+                callbackUrl: "http://localhost:3000/",
+              })
+            }
+            key="google">
+            <GoogleOutlined /> Google
+          </Button>
+          ,
+        </>
+      }>
+      <Form
+        initialValues={{
+          remember: false,
+        }}
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
+        autoComplete="off">
+        <Form.Item
+          label="Email"
+          name="email"
+          rules={[
+            {
+              required: true,
+              message: "Please input your Email!",
+            },
+          ]}>
+          <Input />
+        </Form.Item>
+
+        <Form.Item
+          label="Password"
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: "Please input your password!",
+            },
+          ]}>
+          <Input.Password />
+        </Form.Item>
+
+        <Form.Item name="remember" valuePropName="checked">
+          <Checkbox>Remember me</Checkbox>
+        </Form.Item>
+
+        <Form.Item>
+          <Button type="primary" htmlType="submit">
+            Login
+          </Button>
+        </Form.Item>
+      </Form>
+    </Card>
   );
 };
 
 export default LoginPage;
+
+LoginPage.getLayout = function getLayout(page) {
+  return <RootLayout>{page}</RootLayout>;
+};
