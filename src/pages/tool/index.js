@@ -1,14 +1,11 @@
 import RootLayout from "@/components/layouts/RootLayout";
 import { removeCart } from "@/redux/cart/cartSlice";
-import { Avatar, Button, Divider, List, Result, message } from "antd";
-import Card from "antd/es/card/Card";
+import { Avatar, Button, List, Result, message, Card } from "antd";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function PCBuilder() {
   const dispatch = useDispatch();
-  const router = useRouter();
   const data = useSelector((state) => state.cart);
   const total = data.reduce((a, b) => a + Number(b.price), 0);
   const [messageApi, contextHolder] = message.useMessage();
@@ -109,51 +106,3 @@ export default function PCBuilder() {
 PCBuilder.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
-
-{
-  /* <List.Item>
-          <List.Item.Meta
-            avatar={
-              <Avatar
-                alt="sub"
-                src={`https://xsgames.co/randomusers/avatar.php?g=pixel`}
-              />
-            }
-            title="CPU"
-            description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-          />
-          <Button>
-            <Link href={"/products?title=CPU"}>Choose</Link>
-          </Button>
-        </List.Item>
-        <List.Item>
-          <List.Item.Meta
-            avatar={
-              <Avatar
-                alt="sub"
-                src={`https://xsgames.co/randomusers/avatar.php?g=pixel`}
-              />
-            }
-            title="Ram"
-            description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-          />
-          <Button>
-            <Link href={"/products?title=Ram"}>Choose</Link>
-          </Button>
-        </List.Item>
-        <List.Item>
-          <List.Item.Meta
-            avatar={
-              <Avatar
-                alt="sub"
-                src={`https://xsgames.co/randomusers/avatar.php?g=pixel`}
-              />
-            }
-            title="Monitor"
-            description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-          />
-          <Button>
-            <Link href={"/products?title=Monitor"}>Choose</Link>
-          </Button>
-        </List.Item> */
-}

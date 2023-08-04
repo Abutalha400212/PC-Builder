@@ -1,3 +1,4 @@
+"use client";
 import { Row, Col, Typography, Layout, Menu, Dropdown, Button } from "antd";
 import { MenuOutlined, LoginOutlined, LogoutOutlined } from "@ant-design/icons";
 import Link from "next/link";
@@ -149,14 +150,16 @@ export default function Navbar() {
                   PC Builder
                 </Link>
               </Button>
-              {session?.user.email ? (
+              {session?.user?.name && (
                 <Button
                   onClick={() => signOut()}
                   title="Logout"
                   type="default"
                   icon={<LogoutOutlined />}
                 />
-              ) : (
+              )}
+
+              {!session?.user?.name && (
                 <Link
                   title="Login"
                   type="button"

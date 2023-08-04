@@ -1,3 +1,4 @@
+"use client";
 import { Layout } from "antd";
 import Navbar from "../Shared/Navbar";
 const { Content, Footer } = Layout;

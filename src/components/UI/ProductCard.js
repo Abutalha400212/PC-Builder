@@ -1,3 +1,4 @@
+"use client";
 import { Button, Card, Rate } from "antd";
 import Image from "next/image";
 import Link from "next/link";

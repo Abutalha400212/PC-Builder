@@ -2,6 +2,7 @@
   "name": "pc-builder",
   "version": "0.1.0",
   "private": true,
+  "module": "auto",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

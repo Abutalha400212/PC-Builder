@@ -58,7 +58,7 @@ Home.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   // const res = await fetch("http://localhost:3000/api/news"); // internal API connected with mongoDB
   const res = await fetch("http://localhost:3000/api/products"); // --> json server
   const data = await res.json();
@@ -68,6 +68,5 @@ export const getStaticProps = async () => {
       products: data?.data,
       // allNews: data.data, // when using internal API connected with mongoDB
     },
-    revalidate: 10,
   };
 };

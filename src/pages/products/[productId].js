@@ -1,8 +1,8 @@
+"use client";
 import RootLayout from "@/components/layouts/RootLayout";
 import { connectToDatabase } from "@/utils/mongodb";
 import { Descriptions, Card, Space, Tag, Row, Col, List, Rate } from "antd";
 import { ObjectId } from "mongodb";
-
 import Image from "next/image";
 import { useRouter } from "next/router";
 
@@ -237,3 +237,29 @@ export async function getServerSideProps(context) {
     },
   };
 }
+
+// export const getStaticPaths = async () => {
+//   const res = await fetch("http://localhost:3000/api/products");
+//   const newses = await res.json();
+
+//   const paths = newses.map((news) => ({
+//     params: { productId: news.id },
+//   }));
+
+//   return { paths, fallback: false };
+// };
+
+// export const getStaticProps = async (context) => {
+//   const { params } = context;
+//   const res = await fetch(
+//     `http://localhost:3000/api/products/${params.productId}`
+//   );
+//   const data = await res.json();
+//   // console.log(data);
+
+//   return {
+//     props: {
+//       product: data,
+//     },
+//   };
+// };

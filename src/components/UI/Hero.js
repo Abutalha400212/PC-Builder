@@ -1,3 +1,4 @@
+"use client";
 import { Card, Carousel, Col, Row, Typography } from "antd";
 import lottieJSON from "@/assets/build.json";
 import Image from "next/image";
