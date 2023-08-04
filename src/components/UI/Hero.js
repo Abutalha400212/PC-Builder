@@ -1,16 +1,7 @@
 "use client";
 import { Card, Carousel, Col, Row, Typography } from "antd";
 import lottieJSON from "@/assets/build.json";
-import Image from "next/image";
 import { Controls, Player } from "@lottiefiles/react-lottie-player";
-// const contentStyle = {
-//   margin: 0,
-//   height: "160px",
-//   color: "#fff",
-//   lineHeight: "160px",
-//   textAlign: "center",
-//   background: "#364d79",
-// };
 
 const HeroSection = () => {
   return (

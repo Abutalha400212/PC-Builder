@@ -60,7 +60,9 @@ Home.getLayout = function getLayout(page) {
 
 export const getServerSideProps = async () => {
   // const res = await fetch("http://localhost:3000/api/news"); // internal API connected with mongoDB
-  const res = await fetch("http://localhost:3000/api/products"); // --> json server
+  const res = await fetch(
+    "https://pc-builder-delta-dun.vercel.app/api/products"
+  ); // --> json server
   const data = await res.json();
   // console.log(data);
   return {
