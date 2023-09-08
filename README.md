@@ -2,9 +2,21 @@
 
 ## Getting Started
 
-Open [https://pc-builder-delta-dun.vercel.app/](https://pc-builder-delta-dun.vercel.app/) with your browser to see the result.
+#### Live Link
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [https://pc-builder-delta-dun.vercel.app/api/products](https://pc-builder-delta-dun.vercel.app/api/products). It's endpoint of API Routes.
+```bash
+https://pc-builder-delta-dun.vercel.app/
+```
+
+#### Api Routes
+
+you can be accessed on
+
+```bash
+https://pc-builder-delta-dun.vercel.app/api/products
+```
+
+It's endpoint of API Routes.
 
 ## Technology
 
